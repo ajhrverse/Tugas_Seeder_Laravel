@@ -15,6 +15,7 @@ class MataKuliahSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create('id_ID');
+        $matkul=['Kalkulus','PWL','IMK','Multimedia','JarKom','Basis data'];
 
         for ($i = 1; $i <= 6; $i++) {
             DB::table('matakuliah')->insert([

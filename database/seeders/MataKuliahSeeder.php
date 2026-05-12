@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 
-class MataKuliahSeeder extends Seeder
+class MatakuliahSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,12 +15,12 @@ class MataKuliahSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create('id_ID');
-        $matkul=['Kalkulus','PWL','IMK','Multimedia','JarKom','Basis data'];
+        $matkul=['Matematika', 'Fisika', 'Kimia', 'Biologi', 'Pemrograman', 'Basis Data'];
 
         for ($i = 1; $i <= 6; $i++) {
             DB::table('matakuliah')->insert([
                 'kode_matakuliah' => 'MK' . $faker->unique()->numerify('######'),
-                'nama_matakuliah' => $faker->words(3, true),
+                'nama_matakuliah' => $faker->randomElement($matkul),
                 'sks' => $faker->randomElement([2, 3, 4]),
                 'created_at' => now(),
                 'updated_at' => now(),

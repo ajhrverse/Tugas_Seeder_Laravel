@@ -12,8 +12,10 @@ class MataKuliah extends Model
         'nama_matakuliah',
         'sks',
     ];
-     public function dosen()
+
+    public function dosen()
     {
         return $this->belongsTo(Dosen::class, 'nidn', 'nidn');
     }
+
 }

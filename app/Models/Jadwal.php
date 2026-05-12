@@ -14,7 +14,7 @@ class Jadwal extends Model
         'jam',
     ];
 
-     public function mataKuliah()
+    public function mataKuliah()
     {
         return $this->belongsTo(Matakuliah::class, 'kode_matakuliah', 'kode_matakuliah');
     }

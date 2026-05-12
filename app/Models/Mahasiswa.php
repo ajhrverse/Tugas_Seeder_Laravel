@@ -7,13 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class Mahasiswa extends Model
 {
     protected $table = 'mahasiswa';
+    protected $primaryKey = 'npm';
+    public $incrementing = false;
+    protected $keyType = 'string';
+    public $timestamps = false;
     protected $fillable = [
         'npm',
-        'nama',
         'nidn',
+        'nama',
     ];
 
-     public function dosen()
+    public function dosen()
     {
         return $this->belongsTo(Dosen::class, 'nidn', 'nidn');
     }

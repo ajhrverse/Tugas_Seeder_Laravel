@@ -11,7 +11,8 @@ class Dosen extends Model
         'nidn',
         'nama',
     ];
-     public function mahasiswa()
+
+    public function mahasiswa()
     {
         return $this->hasMany(Mahasiswa::class, 'nidn', 'nidn');
     }

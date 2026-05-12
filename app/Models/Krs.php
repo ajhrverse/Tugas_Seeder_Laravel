@@ -10,7 +10,7 @@ class Krs extends Model
         'npm',
         'kode_matakuliah',
     ];
-    
+
     public function mahasiswa()
     {
         return $this->belongsTo(Mahasiswa::class, 'npm', 'npm');
